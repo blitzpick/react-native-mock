@@ -2,17 +2,18 @@ var _jsxFileName='src/components/ListView.js';var _extends=Object.assign||functi
 var _ScrollResponder=require('../mixins/ScrollResponder');var _ScrollResponder2=_interopRequireDefault(_ScrollResponder);
 var _reactTimerMixin=require('react-timer-mixin');var _reactTimerMixin2=_interopRequireDefault(_reactTimerMixin);
 var _ScrollView=require('./ScrollView');var _ScrollView2=_interopRequireDefault(_ScrollView);
-var _ListViewDataSource=require('../api/ListViewDataSource');var _ListViewDataSource2=_interopRequireDefault(_ListViewDataSource);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}var
+var _ListViewDataSource=require('../api/ListViewDataSource');var _ListViewDataSource2=_interopRequireDefault(_ListViewDataSource);
+var _createReactClass=require('create-react-class');var _createReactClass2=_interopRequireDefault(_createReactClass);
+var _propTypes=require('prop-types');var _propTypes2=_interopRequireDefault(_propTypes);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{'default':obj};}
 
-PropTypes=_react2['default'].PropTypes;
 var SCROLLVIEW_REF='listviewscroll';
 
 
-var ListView=_react2['default'].createClass({displayName:'ListView',
+var ListView=(0,_createReactClass2['default'])({displayName:'ListView',
 propTypes:_extends({},
 _ScrollView2['default'].propTypes,{
 
-dataSource:PropTypes.instanceOf(_ListViewDataSource2['default']).isRequired,
+dataSource:_propTypes2['default'].instanceOf(_ListViewDataSource2['default']).isRequired,
 /**
      * (sectionID, rowID, adjacentRowHighlighted) => renderable
      *
@@ -21,7 +22,7 @@ dataSource:PropTypes.instanceOf(_ListViewDataSource2['default']).isRequired,
      * Take a sectionID and rowID of the row above and whether its adjacent row
      * is highlighted.
      */
-renderSeparator:PropTypes.func,
+renderSeparator:_propTypes2['default'].func,
 /**
      * (rowData, sectionID, rowID, highlightRow) => renderable
      *
@@ -33,27 +34,27 @@ renderSeparator:PropTypes.func,
      * below will be hidden when a row is highlighted. The highlighted state of
      * a row can be reset by calling highlightRow(null).
      */
-renderRow:PropTypes.func.isRequired,
+renderRow:_propTypes2['default'].func.isRequired,
 /**
      * How many rows to render on initial component mount.  Use this to make
      * it so that the first screen worth of data appears at one time instead of
      * over the course of multiple frames.
      */
-initialListSize:PropTypes.number,
+initialListSize:_propTypes2['default'].number,
 /**
      * Called when all rows have been rendered and the list has been scrolled
      * to within onEndReachedThreshold of the bottom.  The native scroll
      * event is provided.
      */
-onEndReached:PropTypes.func,
+onEndReached:_propTypes2['default'].func,
 /**
      * Threshold in pixels for onEndReached.
      */
-onEndReachedThreshold:PropTypes.number,
+onEndReachedThreshold:_propTypes2['default'].number,
 /**
      * Number of rows to render per event loop.
      */
-pageSize:PropTypes.number,
+pageSize:_propTypes2['default'].number,
 /**
      * () => renderable
      *
@@ -62,8 +63,8 @@ pageSize:PropTypes.number,
      * in StaticContainer or other mechanism as appropriate.  Footer is always
      * at the bottom of the list, and header at the top, on every render pass.
      */
-renderFooter:PropTypes.func,
-renderHeader:PropTypes.func,
+renderFooter:_propTypes2['default'].func,
+renderHeader:_propTypes2['default'].func,
 /**
      * (sectionData, sectionID) => renderable
      *
@@ -73,19 +74,19 @@ renderHeader:PropTypes.func,
      * stick to the top until it is pushed off the screen by the next section
      * header.
      */
-renderSectionHeader:PropTypes.func,
+renderSectionHeader:_propTypes2['default'].func,
 /**
      * (props) => renderable
      *
      * A function that returns the scrollable component in which the list rows
      * are rendered. Defaults to returning a ScrollView with the given props.
      */
-renderScrollComponent:_react2['default'].PropTypes.func.isRequired,
+renderScrollComponent:_propTypes2['default'].func.isRequired,
 /**
      * How early to start rendering rows before they come on screen, in
      * pixels.
      */
-scrollRenderAheadDistance:_react2['default'].PropTypes.number,
+scrollRenderAheadDistance:_propTypes2['default'].number,
 /**
      * (visibleRows, changedRows) => void
      *
@@ -95,13 +96,13 @@ scrollRenderAheadDistance:_react2['default'].PropTypes.number,
      * that have changed their visibility, with true indicating visible, and
      * false indicating the view has moved out of view.
      */
-onChangeVisibleRows:_react2['default'].PropTypes.func,
+onChangeVisibleRows:_propTypes2['default'].func,
 /**
      * A performance optimization for improving scroll perf of
      * large lists, used in conjunction with overflow: 'hidden' on the row
      * containers.  This is enabled by default.
      */
-removeClippedSubviews:_react2['default'].PropTypes.bool,
+removeClippedSubviews:_propTypes2['default'].bool,
 /**
      * An array of child indices determining which children get docked to the
      * top of the screen when scrolling. For example, passing
@@ -110,7 +111,7 @@ removeClippedSubviews:_react2['default'].PropTypes.bool,
      * with `horizontal={true}`.
      * @platform ios
      */
-stickyHeaderIndices:PropTypes.arrayOf(PropTypes.number)}),
+stickyHeaderIndices:_propTypes2['default'].arrayOf(_propTypes2['default'].number)}),
 
 mixins:[_ScrollResponder2['default'].Mixin,_reactTimerMixin2['default']],
 
@@ -151,7 +152,7 @@ this.refs[SCROLLVIEW_REF].setNativeProps(props);
 
 getDefaultProps:function(){function getDefaultProps(){
 return{
-renderScrollComponent:function(){function renderScrollComponent(props){return _react2['default'].createElement(_ScrollView2['default'],_extends({},props,{__source:{fileName:_jsxFileName,lineNumber:154}}));}return renderScrollComponent;}()};
+renderScrollComponent:function(){function renderScrollComponent(props){return _react2['default'].createElement(_ScrollView2['default'],_extends({},props,{__source:{fileName:_jsxFileName,lineNumber:155}}));}return renderScrollComponent;}()};
 
 }return getDefaultProps;}(),
 
